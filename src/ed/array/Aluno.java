@@ -1,4 +1,4 @@
-package ed;
+package ed.array;
 
 public class Aluno {
 

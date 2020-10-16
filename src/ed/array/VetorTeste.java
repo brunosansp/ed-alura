@@ -1,4 +1,6 @@
-package ed;
+package ed.array;
+
+import java.util.ArrayList;
 
 public class VetorTeste {
 
@@ -29,5 +31,9 @@ public class VetorTeste {
 
         lista.remove(1);
         System.out.println(lista);
+
+//        Implementação do Java via ArrayList facilita
+        ArrayList<Aluno> listaDoJava = new ArrayList<Aluno>();
+
     }
 }

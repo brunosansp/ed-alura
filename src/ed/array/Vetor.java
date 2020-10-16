@@ -1,4 +1,4 @@
-package ed;
+package ed.array;
 
 import java.util.Arrays;
 
@@ -16,14 +16,26 @@ public class Vetor {
 //        }
 //    }
     public void adiciona(Aluno aluno) {
+        this.garanteEspaco();
+
         this.alunos[totalDeAlunos] = aluno;
         totalDeAlunos++;
     }
 
+    public void garanteEspaco() {
+        if(totalDeAlunos == alunos.length) {
+            Aluno[] novoArray = new Aluno[alunos.length*2];
+            for(int i = 0; i < alunos.length; i++) {
+                novoArray[i] = alunos[i];
+            }
+            this.alunos = novoArray;
+        }
+    }
     private boolean posicaoInvalida(int posicao) {
         return posicao >= 0 && posicao <= totalDeAlunos;
     }
     public void adiciona(int posicao, Aluno aluno) {
+        this.garanteEspaco();
         if(!posicaoInvalida(posicao)) {
             throw new IllegalArgumentException("posicao invalida");
         }
